@@ -2,4 +2,9 @@
     <string name="app_name">UX DESIGN</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_popular_title_1">게시글 제목 게시글 제목 게시글 제목</string>
+    <string name="home_popular_title_2">게시글 제목 게시글 제목 게시글 제목</string>
+    <string name="home_popular_title_3">게시글 제목 게시글 제목 게시글 제목</string>
+    <string name="home_news_title_1">\'도서관 개장\' 중국, 손흥민에 멀티골 허용→응원단도 \'침묵\'…</string>
+
 </resources>
