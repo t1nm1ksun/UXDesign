@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gom="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_bnv_home"
+        android:title="홈"
+        android:checked="true"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/menu_category"
+        android:icon="@drawable/ic_bnv_category"
+        android:title="카테고리"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/menu_favorite"
+        android:icon="@drawable/ic_bnv_favorite"
+        android:title="즐겨찾기"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/menu_board"
+        android:icon="@drawable/ic_bnv_board"
+        android:title="게시판"
+        android:enabled="true"
+        />
+</menu>
