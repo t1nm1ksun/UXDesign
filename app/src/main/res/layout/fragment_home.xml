@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".feature.home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/iv_home_logo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_logo_sportsmate_notext"
 
-</FrameLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="52dp"
+        />
+
+    <TextView
+        android:id="@+id/iv_home_hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="안녕하세요!"
+        android:textSize="14sp"
+        android:fontFamily="@font/font_nanumsquare_regular"
+
+        app:layout_constraintTop_toTopOf="@id/iv_home_logo"
+        app:layout_constraintStart_toEndOf="@id/iv_home_logo"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="홍길동님"
+        android:textSize="18sp"
+        android:fontFamily="@font/font_nanumsquare_bold"
+
+        app:layout_constraintStart_toStartOf="@id/iv_home_hello"
+        app:layout_constraintBottom_toBottomOf="@id/iv_home_logo"
+        android:layout_marginBottom="5dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
