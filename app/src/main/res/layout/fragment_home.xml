@@ -15,11 +15,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="35dp"
         />
 
     <TextView
-        android:id="@+id/iv_home_hello"
+        android:id="@+id/tv_home_hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -34,6 +34,7 @@
         />
 
     <TextView
+        android:id="@+id/tv_home_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -41,9 +42,330 @@
         android:textSize="18sp"
         android:fontFamily="@font/font_nanumsquare_bold"
 
-        app:layout_constraintStart_toStartOf="@id/iv_home_hello"
+        app:layout_constraintStart_toStartOf="@id/tv_home_hello"
         app:layout_constraintBottom_toBottomOf="@id/iv_home_logo"
         android:layout_marginBottom="5dp"
+        />
+    
+    <ImageView
+        android:id="@+id/iv_home_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_home_notification"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_home_logo"
+        app:layout_constraintBottom_toBottomOf="@id/iv_home_logo"
+        android:layout_marginEnd="26dp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_home_today"
+        android:layout_width="match_parent"
+        android:layout_marginStart="25dp"
+        android:layout_height="173dp"
+        android:src="@drawable/bg_home_rectangle_leftradius"
+        android:background="@drawable/bg_home_rectangle_leftradius"
+        android:elevation="30dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_home_logo"
+        android:layout_marginTop="25dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_home_league"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_1"
+        android:text="KBL"
+        android:textSize="14sp"
+        android:fontFamily="@font/font_nanumsquare_bold"
+        android:elevation="31dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_home_today"
+        android:layout_marginTop="22dp"
+        />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/bg_gray_line"
+        android:elevation="31dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_league"
+        android:layout_marginHorizontal="49dp"
+        android:layout_marginTop="11dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_home_vs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_2"
+        android:text="VS"
+        android:fontFamily="@font/font_nanumsquare_extrabold"
+        android:textSize="24sp"
+        android:elevation="31dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
+        android:layout_marginTop="28dp"
+        />
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:elevation="31dp"
+        android:gravity="center"
+
+        app:layout_constraintTop_toBottomOf="@id/line1"
+        app:layout_constraintEnd_toStartOf="@id/tv_home_vs"
+        android:layout_marginEnd="30dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_home_redboosters"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_team_redboosters"
+            />
+
+        <TextView
+            android:id="@+id/tv_home_redboosters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="안양 정관장"
+            android:fontFamily="@font/font_nanumsquare_bold"
+            android:textSize="15sp"
+            android:letterSpacing="-0.07"
+            android:layout_marginTop="20dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:elevation="31dp"
+        android:gravity="center"
+
+        app:layout_constraintTop_toBottomOf="@id/line1"
+        app:layout_constraintStart_toEndOf="@id/tv_home_vs"
+        android:layout_marginStart="30dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_home_skknights"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_team_skknights"
+            />
+
+        <TextView
+            android:id="@+id/tv_home_skknights"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="서울 SK"
+            android:fontFamily="@font/font_nanumsquare_bold"
+            android:textSize="15sp"
+            android:letterSpacing="-0.07"
+            android:layout_marginTop="20dp"
+            />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/tv_home_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue_soft"
+        android:text="19:00 예정"
+        android:fontFamily="@font/font_nanumsquare_regular"
+        android:textSize="13sp"
+        android:elevation="31dp"
+        android:letterSpacing="-0.07"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_vs"
+        />
+
+    <TextView
+        android:id="@+id/tv_home_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="인기 기사 보기"
+        android:fontFamily="@font/font_nanumsquare_bold"
+        android:textSize="15sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_home_today"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_home_news"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:elevation="1dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_news"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="11dp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_home_board"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:src="@drawable/bg_home_board"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_home_board"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="실시간 인기글"
+        android:fontFamily="@font/font_nanumsquare_bold"
+        android:textSize="15sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_home_board"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="42dp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_home_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_home_more"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_home_board"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home_board"
+        android:layout_marginEnd="25dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_home_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue_more"
+        android:text="View More"
+        android:fontFamily="@font/nanumsquare_extrabold"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toStartOf="@id/iv_home_more"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home_board"
+        app:layout_constraintTop_toTopOf="@id/tv_home_board"
+        android:layout_marginEnd="4dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_home_post_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="1."
+        android:fontFamily="@font/nanumsquare_extrabold"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_board"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_home_post_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="2."
+        android:fontFamily="@font/nanumsquare_extrabold"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toStartOf="@id/tv_home_post_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_post_1"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_home_post_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="3."
+        android:fontFamily="@font/nanumsquare_extrabold"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toStartOf="@id/tv_home_post_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_post_2"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/home_popular_title_1"
+        android:textSize="14sp"
+        android:fontFamily="@font/font_nanumsquare_bold"
+
+        app:layout_constraintTop_toTopOf="@id/tv_home_post_1"
+        app:layout_constraintStart_toEndOf="@id/tv_home_post_1"
+        android:layout_marginTop="0.8dp"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/home_popular_title_2"
+        android:textSize="14sp"
+        android:fontFamily="@font/font_nanumsquare_bold"
+
+        app:layout_constraintTop_toTopOf="@id/tv_home_post_2"
+        app:layout_constraintStart_toEndOf="@id/tv_home_post_2"
+        android:layout_marginTop="0.8dp"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/home_popular_title_3"
+        android:textSize="14sp"
+        android:fontFamily="@font/font_nanumsquare_bold"
+
+        app:layout_constraintTop_toTopOf="@id/tv_home_post_3"
+        app:layout_constraintStart_toEndOf="@id/tv_home_post_3"
+        android:layout_marginTop="0.8dp"
+        android:layout_marginStart="10dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
