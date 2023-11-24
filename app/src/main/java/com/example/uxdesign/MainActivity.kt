@@ -12,6 +12,7 @@ import com.example.uxdesign.feature.board.BoardFragment
 import com.example.uxdesign.feature.category.CategoryFragment
 import com.example.uxdesign.feature.favorite.FavoriteFragment
 import com.example.uxdesign.feature.home.HomeFragment
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +22,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initBnvItemSelectedListener()
+        setTabLayout()
+    }
+
+    private fun setTabLayout() {
+
     }
 
     private fun initBnvItemSelectedListener() {
