@@ -26,30 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setTabLayout() {
-        // 초기 tab 세팅
-        binding.tabLayoutContainer.setBackgroundResource(R.drawable.tab_select)
 
-        binding.storeFragmentTablayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            // tab이 선택되었을 때
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                when (tab!!.position) {
-                    /*0 -> binding.tabLayoutContainer.setBackgroundResource(R.color.purple_700)
-                    1 -> binding.tabLayoutContainer.setBackgroundResource(R.color.white)
-                    2 -> binding.tabLayoutContainer.setBackgroundResource(R.color.purple_200)
-                    3 -> binding.tabLayoutContainer.setBackgroundResource(R.color.teal_200)
-                    제가 조만간 처리하겠습니다 거의 다함!
-                    */
-                }
-            }
-            // tab이 선택되지 않았을 때
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-
-            }
-            // tab이 다시 선택되었을 때
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-
-            }
-        })
     }
 
     private fun initBnvItemSelectedListener() {

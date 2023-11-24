@@ -2,26 +2,32 @@ package com.example.uxdesign.feature.favorite
 
 import android.R
 import android.os.Bundle
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.google.android.material.tabs.TabLayout
 import com.example.uxdesign.databinding.FragmentFavoriteBinding
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 
 class FavoriteFragment : Fragment() {
     private var _binding : FragmentFavoriteBinding? = null
     private val binding get() = _binding!!
 
+   /* @Nullable
+    override fun onCreateView(inflater: LayoutInflater,@Nullable container: ViewGroup?,
+        @Nullable savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_main, container, false) as ViewGroup
+    }*/
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
-        return binding.root
+        return inflater.inflate(R.layout.fragment_favoriteteam, container, false) as ViewGroup
     }
 
     /*override fun onCreate(savedInstanceState: Bundle?) {
