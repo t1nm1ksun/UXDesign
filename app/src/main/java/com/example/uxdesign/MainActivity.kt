@@ -1,12 +1,14 @@
 package com.example.uxdesign
 
 import android.os.Bundle
+import androidx.fragment.app.replace
 import android.text.TextUtils.replace
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
-import androidx.fragment.app.replace
+
+
 import com.example.uxdesign.databinding.ActivityMainBinding
 import com.example.uxdesign.feature.board.BoardFragment
 import com.example.uxdesign.feature.category.CategoryFragment
