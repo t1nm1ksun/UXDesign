@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
-        android:text="팀A vs 팀B"
+        android:text="맨시티 vs 토트넘"
         android:textSize="20sp"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -115,7 +115,7 @@
 
     <View
         android:layout_width="370dp"
-        android:layout_height="370dp"
+        android:layout_height="380dp"
         android:layout_marginTop="231dp"
         android:background="@drawable/team_compare"
         app:layout_constraintTop_toTopOf="parent"
@@ -125,7 +125,7 @@
     <View
         android:layout_width="350dp"
         android:layout_height="360dp"
-        android:layout_marginTop="235dp"
+        android:layout_marginTop="240dp"
         android:background="@drawable/img_team_compare"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
