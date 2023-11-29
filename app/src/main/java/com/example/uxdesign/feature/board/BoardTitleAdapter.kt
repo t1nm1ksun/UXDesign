@@ -19,11 +19,21 @@ class BoardTitleAdapter (private val items: ArrayList<PostTitle>, val context: C
         return ViewHolder(inflatedView)
     }
 
+    interface OnItemClickListener {
+        fun OnItemClick(data: PostTitle, position: Int /* 또 이벤트 처리에 필요한 거~ */)
+    }
+
+    var itemClickListener : OnItemClickListener? = null
+
     override fun onBindViewHolder(holder: BoardTitleAdapter.ViewHolder, position: Int) {
         val item = items[position]
         holder.titleTv.text = item.title
         holder.whenTv.text = "${item.date} ${item.time}"
         holder.writerTv.text = item.writer
+
+        holder.itemView.setOnClickListener {
+            itemClickListener?.OnItemClick(item, position)
+        }
     }
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {

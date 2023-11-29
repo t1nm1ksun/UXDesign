@@ -1,6 +1,8 @@
 package com.example.uxdesign.feature.board
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -56,6 +58,22 @@ class BoardTitleFragment : Fragment() {
         boardList.add(PostTitle("게시글 제목", "11/28", "오후 5:54", "작성자"))
 
         setLayoutManager()
+
+        adapter.itemClickListener = object : BoardTitleAdapter.OnItemClickListener {
+            override fun OnItemClick(data: PostTitle, position: Int) {
+//                Log.d("uxdesign", "itemClick")
+                // TO DO ~~~
+//                requireActivity().supportFragmentManager.findFragmentById(R.id.fcv_main) ?: navigateTo<BoardTitleFragment>()
+
+                val i = Intent(requireContext(), PostActivity::class.java)
+                i.putExtra("title", data.title)
+                i.putExtra("writer", data.writer)
+                i.putExtra("date", data.date)
+                i.putExtra("time", data.time)
+                startActivity(i)
+
+            }
+        }
     }
 
     override fun onDestroyView() {
