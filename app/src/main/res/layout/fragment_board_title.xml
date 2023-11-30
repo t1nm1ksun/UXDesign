@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".feature.board.BoardTitleFragment">
+
+    <ImageView
+        android:id="@+id/iv_board_title_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_board_title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전체 게시판"
+        android:textColor="@color/black"
+        android:fontFamily="@font/font_nanumsquare_extrabold"
+        android:textSize="20sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_board_title_back"
+        />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_board_title"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/ic_toolbar"
+        android:elevation="4dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_board_title_name"
+        >
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/sv_board_title"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="검색어를 입력하세요."
+            app:queryBackground="@null"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/bg_gray_line"
+        app:layout_constraintTop_toBottomOf="@id/tb_board_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        />
+
+<!--    app:layout_constraintTop_toBottomOf="@id/line1"-->
+<!--    android:layout_marginTop="34dp"-->
+
+    <ImageView
+        android:id="@+id/iv_board_title_bg"
+        android:layout_width="match_parent"
+        android:layout_height="510dp"
+        android:elevation="4dp"
+        android:background="@drawable/bg_postbackground"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="12dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_board_title_list"
+        android:layout_width="match_parent"
+        android:layout_height="404dp"
+        android:elevation="5dp"
+
+        app:layout_constraintTop_toTopOf="@id/iv_board_title_bg"
+        android:layout_marginTop="31dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="52dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_board_title_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="@font/font_nanumsquare_bold"
+        android:textColor="@color/black"
+        android:text="page 1"
+        android:elevation="5dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/iv_board_title_bg"
+        android:layout_marginBottom="26dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_board_title_next"
+        android:elevation="5dp"
+
+        app:layout_constraintStart_toEndOf="@id/tv_board_title_page"
+        android:layout_marginStart="22dp"
+        app:layout_constraintTop_toTopOf="@id/tv_board_title_page"
+        app:layout_constraintBottom_toBottomOf="@id/tv_board_title_page"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
