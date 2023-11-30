@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".feature.category.CategoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_category"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/ic_toolbar"
+        android:elevation="4dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
-</FrameLayout>
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/sv_category"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="구단 및 선수 이름을 검색하세요."
+            app:queryBackground="@null"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/bg_gray_line"
+        app:layout_constraintTop_toBottomOf="@id/tb_category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="31dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category_sports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+        app:layout_constraintTop_toBottomOf="@id/line1"
+        />
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll_category"
+        android:layout_width="370dp"
+        android:layout_height="520dp"
+        android:background="@drawable/bg_category_league"
+        android:layout_marginHorizontal="11dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_category_league"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <GridView
+            android:id="@+id/gv_category_team"
+            android:layout_width="267dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_category_team"
+            android:numColumns="3"
+            android:paddingVertical="36dp"
+            android:paddingHorizontal="4dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
