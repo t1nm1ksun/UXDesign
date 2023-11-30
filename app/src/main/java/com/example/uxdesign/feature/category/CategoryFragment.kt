@@ -1,15 +1,19 @@
 package com.example.uxdesign.feature.category
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.commit
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uxdesign.R
 import com.example.uxdesign.data.News
 import com.example.uxdesign.databinding.FragmentCategoryBinding
+import com.example.uxdesign.feature.board.BoardTitleFragment
 import com.example.uxdesign.feature.home.HomeNewsAdapter
 
 class CategoryFragment : Fragment() {
@@ -30,6 +34,12 @@ class CategoryFragment : Fragment() {
     private var leagueSelectedList = ArrayList<Boolean>()
     private lateinit var leagueAdapter : LeagueAdapter
 
+    private var _teamRecyclerView : RecyclerView? = null
+    private val teamRecyclerView get() = _teamRecyclerView!!
+
+    private var teamList = ArrayList<Int>()
+    private lateinit var teamAdapter : LeagueTeamAdapter
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,8 +57,10 @@ class CategoryFragment : Fragment() {
          */
         _sportsRecyclerView = binding.rvCategorySports
         _leagueRecyclerView = binding.rvCategoryLeague
+        _teamRecyclerView = binding.rvCategoryTeam
 
         addExampleData()
+        testAddingLeagueTeam()
         setLayoutManager()
         sportsAdapter.notifyDataSetChanged()
 
@@ -56,6 +68,7 @@ class CategoryFragment : Fragment() {
 
     private val soccerLeagueList = ArrayList<String>()
     private val basketLeagueList = ArrayList<String>()
+    private val europaTeamList = ArrayList<Int>()
 
     private fun setLayoutManager() {
         val layoutManager = LinearLayoutManager(this.context)
@@ -69,21 +82,103 @@ class CategoryFragment : Fragment() {
         sportsAdapter.itemClickListener = object : SportsAdapter.OnItemClickListener {
             override fun onItemClick(data: String, position: Int) {
                 when (data) {
-                    "축구" -> leagueList = soccerLeagueList
-                    "농구" -> leagueList = basketLeagueList
+                    "축구" -> {
+                        leagueList = soccerLeagueList
+                        Log.d("uxdesign", "축구...")
+                        Log.d("uxdesign", "${leagueList.size}")
+                        setToSoccerLeague()
+                    }
+                    "농구" -> {
+                        leagueList = basketLeagueList
+                        Log.d("uxdesign", "농구..")
+                        Log.d("uxdesign", "$leagueList")
+                        Log.d("uxdesign", "${leagueList.size}")
+                        setToBasketLeague()
+
+                    }
                 }
-                sportsAdapter.notifyDataSetChanged()
             }
         }
+
+        // 왜 농구를 들어가도 안 바뀌는지...
+
+//        teamList = soccerLeagueList
+
+//        sportsAdapter.itemClickListener = object : SportsAdapter.OnItemClickListener {
+//            override fun onItemClick(data: String, position: Int) {
+//                when (data) {
+//                    "축구" -> leagueList = soccerLeagueList
+//                    "농구" -> leagueList = basketLeagueList
+//                }
+//                sportsAdapter.notifyDataSetChanged()
+//            }
+//        }
 
         val layoutManager2 = LinearLayoutManager(this.context)
         layoutManager2.orientation = LinearLayoutManager.VERTICAL
         leagueRecyclerView.layoutManager = layoutManager2
         leagueAdapter = LeagueAdapter(leagueList, leagueSelectedList, this.requireContext())
         leagueRecyclerView.adapter = leagueAdapter
+
+        val layoutManger3 = GridLayoutManager(this.context, 3)
+        teamRecyclerView.layoutManager = layoutManger3
+        teamAdapter = LeagueTeamAdapter(teamList, this.requireContext())
+        teamRecyclerView.adapter = teamAdapter
+
+        teamAdapter.itemClickListener = object : LeagueTeamAdapter.OnItemClickListener {
+            override fun onItemClick(data: Int, position: Int) {
+                if (data.equals(R.drawable.ic_team_skknights)) {
+                    val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                    fragmentTransaction.add(R.id.fcv_main, DataTeamFragment::class.java.newInstance()).addToBackStack(null).commit()
+                }
+            }
+        }
+    }
+
+    private fun testAddingLeagueTeam() {
+        europaTeamList.clear()
+        europaTeamList.add(R.drawable.ic_team_skknights)
+        europaTeamList.add(R.drawable.ic_team_redboosters)
+        europaTeamList.add(R.drawable.ic_team_skknights)
+        europaTeamList.add(R.drawable.ic_team_redboosters)
+        europaTeamList.add(R.drawable.ic_team_skknights)
+        europaTeamList.add(R.drawable.ic_team_redboosters)
+        europaTeamList.add(R.drawable.ic_team_skknights)
+        europaTeamList.add(R.drawable.ic_team_redboosters)
+
+        teamList = europaTeamList
+    }
+
+//    private fun test
+
+    private fun setToSoccerLeague() {
+        leagueSelectedList.clear()
+        leagueAdapter.initPreviousSelected()
+        leagueSelectedList.add(true)
+        repeat(8) {
+            leagueSelectedList.add(false)
+        }
+        leagueAdapter = LeagueAdapter(soccerLeagueList, leagueSelectedList, this.requireContext())
+        leagueRecyclerView.adapter = leagueAdapter
+        leagueAdapter.notifyDataSetChanged()
+    }
+
+    private fun setToBasketLeague() {
+        leagueSelectedList.clear()
+        leagueAdapter.initPreviousSelected()
+        leagueSelectedList.add(true)
+        repeat(2) {
+            leagueSelectedList.add(false)
+        }
+        leagueAdapter = LeagueAdapter(basketLeagueList, leagueSelectedList, this.requireContext())
+        leagueRecyclerView.adapter = leagueAdapter
+        leagueAdapter.notifyDataSetChanged()
+
     }
 
     private fun addExampleData() {
+        sportsList.clear()
+        sportsSelectedList.clear()
         sportsList.add("축구")
         sportsSelectedList.add(true)
         sportsList.add("야구")
@@ -96,6 +191,8 @@ class CategoryFragment : Fragment() {
             sportsSelectedList.add(false)
         }
 
+        soccerLeagueList.clear()
+        leagueSelectedList.clear()
         soccerLeagueList.add("K리그1")
         leagueSelectedList.add(true)
         soccerLeagueList.add("K리그2")
@@ -109,6 +206,11 @@ class CategoryFragment : Fragment() {
         repeat(8) {
             leagueSelectedList.add(false)
         }
+
+        basketLeagueList.clear()
+        basketLeagueList.add("KBL")
+        basketLeagueList.add("WKBL")
+        basketLeagueList.add("NBA")
 
     }
 

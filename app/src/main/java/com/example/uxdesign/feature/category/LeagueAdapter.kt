@@ -31,6 +31,8 @@ class LeagueAdapter (private val items: ArrayList<String>, val selected: ArrayLi
 
     }
 
+    fun initPreviousSelected() = run { previousSelected = 0 }
+
     interface OnItemClickListener {
         fun onItemClick(data: String, position: Int)
     }

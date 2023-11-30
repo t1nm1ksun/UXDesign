@@ -79,12 +79,11 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <GridView
-            android:id="@+id/gv_category_team"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_category_team"
             android:layout_width="267dp"
             android:layout_height="match_parent"
             android:background="@drawable/bg_category_team"
-            android:numColumns="3"
             android:paddingVertical="36dp"
             android:paddingHorizontal="4dp"
 

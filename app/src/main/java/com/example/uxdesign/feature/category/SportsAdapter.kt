@@ -43,6 +43,8 @@ class SportsAdapter (private val items: ArrayList<String>, val selected: ArrayLi
         return ViewHolder(inflatedView)
     }
 
+    fun initPreviousSelected() = run { previousSelected = 0 }
+
     inner class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         private var view : View = v
         var textView : TextView = v.findViewById(R.id.tv_item_sport_name)
