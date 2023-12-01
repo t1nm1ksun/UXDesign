@@ -1,5 +1,6 @@
 package com.example.uxdesign.feature.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import com.example.uxdesign.R
 import com.example.uxdesign.WebViewFragment
 import com.example.uxdesign.data.News
 import com.example.uxdesign.databinding.FragmentHomeBinding
+import com.example.uxdesign.feature.match.MatchDataActivity
+import com.example.uxdesign.feature.mypage.MypageActivity
 
 class HomeFragment : Fragment() {
     private var _binding : FragmentHomeBinding? = null
@@ -53,6 +56,16 @@ class HomeFragment : Fragment() {
                 val fragment = WebViewFragment.newInstance(url)
                 fragmentTransaction.add(R.id.fcv_main, fragment).addToBackStack(null).commit()
             }
+        }
+
+        binding.tvHomeVs.setOnClickListener {
+            val i = Intent(requireActivity(), MatchDataActivity::class.java)
+            startActivity(i)
+        }
+
+        binding.ivHomeLogo.setOnClickListener {
+            val i = Intent(requireActivity(), MypageActivity::class.java)
+            startActivity(i)
         }
     }
 
