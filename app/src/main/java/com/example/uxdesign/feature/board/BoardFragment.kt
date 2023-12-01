@@ -68,7 +68,7 @@ class BoardFragment : Fragment() {
 //                requireActivity().supportFragmentManager.findFragmentById(R.id.fcv_main) ?: navigateTo<BoardTitleFragment>()
 
                 val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-                fragmentTransaction.replace(R.id.fcv_main, BoardTitleFragment::class.java.newInstance()).addToBackStack(null).commit()
+                fragmentTransaction.add(R.id.fcv_main, BoardTitleFragment::class.java.newInstance()).addToBackStack(null).commit()
             }
         }
     }
