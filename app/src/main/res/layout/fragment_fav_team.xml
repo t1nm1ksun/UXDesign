@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="370dp"
     android:layout_height="match_parent"
-    android:background="@drawable/tab_select"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/tab_select">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -11,108 +11,103 @@
         >
 
 
-
-        <Button
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_fav_skknights"
             android:layout_width="83dp"
             android:layout_height="83dp"
             android:layout_marginTop="57dp"
             android:layout_marginLeft="36dp"
-            android:background="@drawable/ic_teamrec"
-            android:text="구단"
-            android:gravity="center"
-            android:textSize="20sp"
-            />
+            app:cardCornerRadius="20dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_team_skknights"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                />
+        </androidx.cardview.widget.CardView>
 
-        <Button
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_fav_redboosters"
             android:layout_width="83dp"
             android:layout_height="83dp"
             android:layout_marginTop="184dp"
             android:layout_marginLeft="36dp"
-            android:background="@drawable/ic_teamrec"
-            android:text="구단"
-            android:gravity="center"
-            android:textSize="20sp"
-            />
+            app:cardCornerRadius="20dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_team_redboosters"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                />
 
-        <Button
-            android:layout_width="83dp"
-            android:layout_height="83dp"
-            android:layout_marginTop="321dp"
-            android:layout_marginLeft="36dp"
-            android:background="@drawable/ic_teamrec"
-            android:text="구단"
-            android:gravity="center"
-            android:textSize="20sp"
-            />
+        </androidx.cardview.widget.CardView>
 
-
-
-        <Button
+        <androidx.cardview.widget.CardView
             android:layout_width="83dp"
             android:layout_height="83dp"
             android:layout_marginTop="57dp"
             android:layout_marginLeft="146dp"
-            android:background="@drawable/ic_teamrec"
-            android:text="구단"
-            android:gravity="center"
-            android:textSize="20sp"
-            />
+            app:cardCornerRadius="20dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_team_kiwoomheros"
+                android:scaleType="centerInside"
+                />
+        </androidx.cardview.widget.CardView>
 
-        <Button
+        <androidx.cardview.widget.CardView
             android:layout_width="83dp"
             android:layout_height="83dp"
             android:layout_marginTop="184dp"
             android:layout_marginLeft="146dp"
-            android:background="@drawable/ic_teamrec"
-            android:text="구단"
-            android:gravity="center"
-            android:textSize="20sp"
-            />
+            app:cardCornerRadius="20dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_team_ncdinos"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                />
+        </androidx.cardview.widget.CardView>
 
-        <Button
-            android:layout_width="83dp"
-            android:layout_height="83dp"
-            android:layout_marginTop="321dp"
-            android:layout_marginLeft="146dp"
-            android:background="@drawable/ic_teamrec"
-            android:text="구단"
-            android:gravity="center"
-            android:textSize="20sp"
-            />
-
-        <Button
+        <androidx.cardview.widget.CardView
             android:layout_width="83dp"
             android:layout_height="83dp"
             android:layout_marginTop="57dp"
             android:layout_marginLeft="256dp"
-            android:background="@drawable/ic_teamrec"
-            android:text="구단"
-            android:gravity="center"
-            android:textSize="20sp"
-            />
+            app:cardCornerRadius="20dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_team_pinkspiders"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                />
+        </androidx.cardview.widget.CardView>
 
-        <Button
+        <androidx.cardview.widget.CardView
             android:layout_width="83dp"
             android:layout_height="83dp"
             android:layout_marginTop="184dp"
             android:layout_marginLeft="256dp"
-            android:background="@drawable/ic_teamrec"
-            android:text="구단"
-            android:gravity="center"
-            android:textSize="20sp"
-            />
-
-        <Button
-            android:layout_width="83dp"
-            android:layout_height="83dp"
-            android:layout_marginTop="321dp"
-            android:layout_marginLeft="256dp"
-            android:background="@drawable/ic_teamrec"
-            android:text="구단"
-            android:gravity="center"
-            android:textSize="20sp"
-            />
-
+            app:cardCornerRadius="20dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_team_redsox"
+                android:padding="15dp"
+                android:scaleType="centerInside"
+                />
+        </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 

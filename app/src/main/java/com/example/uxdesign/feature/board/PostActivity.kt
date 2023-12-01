@@ -15,6 +15,13 @@ class PostActivity : AppCompatActivity() {
         binding = ActivityPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setPost()
+        setBackBtn()
+    }
+
+    private fun setBackBtn() {
+        binding.btnPostBack.setOnClickListener {
+            finish()
+        }
     }
 
     private fun findIntent(): PostDetail? {

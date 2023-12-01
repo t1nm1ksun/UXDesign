@@ -29,6 +29,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
+        android:id="@+id/tv_item_news"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -44,6 +45,7 @@
         />
     
     <Button
+        android:id="@+id/btn_item_news"
         android:layout_width="53dp"
         android:layout_height="18dp"
         android:background="@drawable/bg_home_news_link"

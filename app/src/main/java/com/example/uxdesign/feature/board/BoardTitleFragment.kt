@@ -50,12 +50,14 @@ class BoardTitleFragment : Fragment() {
 
         _recyclerView = binding.rvBoardTitleList
         boardList.clear()
-        boardList.add(PostTitle("게시글 제목", "11/28", "오후 5:54", "작성자"))
-        boardList.add(PostTitle("게시글 제목", "11/28", "오후 5:54", "작성자"))
-        boardList.add(PostTitle("게시글 제목", "11/28", "오후 5:54", "작성자"))
-        boardList.add(PostTitle("게시글 제목", "11/28", "오후 5:54", "작성자"))
-        boardList.add(PostTitle("게시글 제목", "11/28", "오후 5:54", "작성자"))
-        boardList.add(PostTitle("게시글 제목", "11/28", "오후 5:54", "작성자"))
+        boardList.add(PostTitle("명가의 몰락", "11/28", "오후 5:54", "김안녕"))
+        boardList.add(PostTitle("언더독의 반란 광주", "11/28", "오후 5:54", "이안녕"))
+        boardList.add(PostTitle("현대가 더비", "11/28", "오후 5:54", "홍길동"))
+        boardList.add(PostTitle("인천 ACL 첫 출전!", "11/28", "오후 5:54", "김길동"))
+        boardList.add(PostTitle("축구인가 격투기인가", "11/28", "오후 5:54", "축구조아"))
+        boardList.add(PostTitle("호날두 양심선언", "11/28", "오후 5:54", "해축"))
+        boardList.add(PostTitle("토트넘 벤치 현황", "11/28", "오후 5:54", "토트넘"))
+        boardList.add(PostTitle("다음 유로파 멤버는?", "11/28", "오후 5:54", "축잘알"))
 
         setLayoutManager()
 
@@ -72,6 +74,18 @@ class BoardTitleFragment : Fragment() {
                 i.putExtra("time", data.time)
                 startActivity(i)
 
+            }
+        }
+
+        binding.ivBoardTitleBack.setOnClickListener {
+            val fragmentContainerId = R.id.fcv_main
+
+            // Fragment를 찾아서 제거
+            val fragment = requireActivity().supportFragmentManager.findFragmentById(fragmentContainerId)
+            if (fragment != null) {
+                val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                fragmentTransaction.remove(fragment)
+                fragmentTransaction.commit()
             }
         }
     }
