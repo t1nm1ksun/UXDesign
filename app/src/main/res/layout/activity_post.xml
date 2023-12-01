@@ -131,7 +131,7 @@
     <ImageView
         android:layout_width="350dp"
         android:layout_height="4dp"
-        android:layout_marginTop="610dp"
+        android:layout_marginTop="600dp"
         android:src="@drawable/bg_gray_line_thick"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -175,10 +175,11 @@
         android:layout_height="25dp"
         android:layout_marginTop="645dp"
         android:layout_marginStart="100dp"
+        android:paddingStart="20dp"
         android:background="@drawable/bg_gray_rec_stroke_radius"
         android:textSize="13sp"
         android:fontFamily="@font/font_nanumsquare_bold"
-        android:hint="   댓글 작성..."
+        android:hint="댓글 작성..."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
