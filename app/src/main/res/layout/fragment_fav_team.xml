@@ -43,6 +43,7 @@
                 android:padding="10dp"
                 android:scaleType="centerInside"
                 />
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
