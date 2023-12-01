@@ -22,7 +22,7 @@
         android:id="@+id/tv_board_title_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="전체 게시판"
+        android:text="축구 게시판"
         android:textColor="@color/black"
         android:fontFamily="@font/font_nanumsquare_extrabold"
         android:textSize="20sp"

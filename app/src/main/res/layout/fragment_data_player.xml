@@ -20,6 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
     <Button
+        android:id="@+id/btn_seoul_player_back"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="22dp"
