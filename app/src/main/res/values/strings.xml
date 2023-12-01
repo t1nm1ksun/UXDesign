@@ -2,9 +2,12 @@
     <string name="app_name">UX DESIGN</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="home_popular_title_1">게시글 제목 게시글 제목 게시글 제목</string>
-    <string name="home_popular_title_2">게시글 제목 게시글 제목 게시글 제목</string>
-    <string name="home_popular_title_3">게시글 제목 게시글 제목 게시글 제목</string>
-    <string name="home_news_title_1">\'도서관 개장\' 중국, 손흥민에 멀티골 허용→응원단도 \'침묵\'…</string>
+    <string name="home_popular_title_1">토트넘 벤치 현황</string>
+    <string name="home_popular_title_2">인천 ACL 첫 출전!</string>
+    <string name="home_popular_title_3">언더독의 반란 광주</string>
+    <string name="home_news_title_1">프로농구 소노, 정관장에서 조은후 영입…김세창과 트레이드</string>
+    <string name="home_news_title_2">\'도서관 개장\' 중국, 손흥민에 멀티골 허용→응원단도 \'침묵\'…</string>
+    <string name="home_news_title_3">\'13분 12점\' 정관장 김경원, 상대 에이스 이정현의 칭찬 “3개…</string>
+    <string name="home_news_title_4">김하성-이정후 이어 김혜성도 도전한다…“곧 구단과 면담할 예정”…</string>
 
 </resources>

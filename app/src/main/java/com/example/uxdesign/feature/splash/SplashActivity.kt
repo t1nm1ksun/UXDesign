@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.example.uxdesign.MainActivity
 import com.example.uxdesign.R
+import com.example.uxdesign.feature.login.LoginActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
     private fun moveMain(sec: Int) {
         Handler().postDelayed(Runnable {
             kotlin.run {
-                val i = Intent(applicationContext, MainActivity::class.java)
+                val i = Intent(applicationContext, LoginActivity::class.java)
                 startActivity(i)
                 finish()
             }

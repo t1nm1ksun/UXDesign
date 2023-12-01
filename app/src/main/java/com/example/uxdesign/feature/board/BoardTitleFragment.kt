@@ -76,6 +76,18 @@ class BoardTitleFragment : Fragment() {
 
             }
         }
+
+        binding.ivBoardTitleBack.setOnClickListener {
+            val fragmentContainerId = R.id.fcv_main
+
+            // Fragment를 찾아서 제거
+            val fragment = requireActivity().supportFragmentManager.findFragmentById(fragmentContainerId)
+            if (fragment != null) {
+                val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                fragmentTransaction.remove(fragment)
+                fragmentTransaction.commit()
+            }
+        }
     }
 
     override fun onDestroyView() {

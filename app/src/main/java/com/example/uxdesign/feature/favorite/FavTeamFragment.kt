@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.uxdesign.R
 import com.example.uxdesign.databinding.FragmentFavTeamBinding
+import com.example.uxdesign.feature.category.DataTeamFragment
+import com.example.uxdesign.feature.category.KgcTeamFragment
 
 class FavTeamFragment : Fragment() {
     private var _binding : FragmentFavTeamBinding? = null
@@ -23,6 +25,15 @@ class FavTeamFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.cvFavSkknights.setOnClickListener {
+            val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            fragmentTransaction.add(R.id.fcv_main, DataTeamFragment::class.java.newInstance()).addToBackStack(null).commit()
+        }
+        binding.cvFavRedboosters.setOnClickListener {
+            val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            fragmentTransaction.add(R.id.fcv_main, KgcTeamFragment::class.java.newInstance()).addToBackStack(null).commit()
+        }
+
     }
 
     override fun onDestroyView() {

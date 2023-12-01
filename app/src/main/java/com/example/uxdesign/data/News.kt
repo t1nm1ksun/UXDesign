@@ -3,7 +3,9 @@ package com.example.uxdesign.data
 import java.io.File
 
 data class News (
-    val title: String
+    val title: String,
+    val image: Int,
+    val link: String
     )
 
 /**
