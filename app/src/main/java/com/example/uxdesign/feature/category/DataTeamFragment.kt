@@ -50,7 +50,7 @@ class DataTeamFragment : Fragment() {
             fragmentTransaction.add(R.id.fcv_main, fragment).addToBackStack(null).commit()
         }
 
-        binding.tvSeoulRecentNews2.setOnClickListener {
+        binding.tvSeoulRecentNews3.setOnClickListener {
             val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
             val url = "https://n.news.naver.com/sports/kfootball/article/003/0012229538" // 전달하려는 데이터
             val fragment = WebViewFragment.newInstance(url)

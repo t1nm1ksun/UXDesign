@@ -14,6 +14,7 @@ import com.example.uxdesign.data.News
 import com.example.uxdesign.databinding.FragmentHomeBinding
 import com.example.uxdesign.feature.match.MatchDataActivity
 import com.example.uxdesign.feature.mypage.MypageActivity
+import com.example.uxdesign.feature.notice.NoticeFragment
 
 class HomeFragment : Fragment() {
     private var _binding : FragmentHomeBinding? = null
@@ -66,6 +67,11 @@ class HomeFragment : Fragment() {
         binding.ivHomeLogo.setOnClickListener {
             val i = Intent(requireActivity(), MypageActivity::class.java)
             startActivity(i)
+        }
+
+        binding.ivHomeNotification.setOnClickListener {
+            val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            fragmentTransaction.add(R.id.fcv_main, NoticeFragment::class.java.newInstance()).addToBackStack(null).commit()
         }
     }
 

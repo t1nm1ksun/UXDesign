@@ -190,12 +190,13 @@
         android:elevation="31dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_match_data_time"
+        app:layout_constraintTop_toTopOf="@id/iv_match_data_pic"
         android:src="@drawable/baseline_bolt_24"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="171dp"
         />
 
     <ImageView
+        android:id="@+id/iv_match_data_pic"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
 
