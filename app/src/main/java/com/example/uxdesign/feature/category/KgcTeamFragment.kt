@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.uxdesign.R
-import com.example.uxdesign.databinding.FragmentDataTeamBinding
+import com.example.uxdesign.databinding.FragmentKgcTeamBinding
 
-class DataTeamFragment : Fragment() {
-    private var _binding : FragmentDataTeamBinding? = null
+class KgcTeamFragment : Fragment() {
+    private var _binding : FragmentKgcTeamBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,21 +17,21 @@ class DataTeamFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentDataTeamBinding.inflate(inflater, container, false)
+        _binding = FragmentKgcTeamBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.ivSeoulPlayer.setOnClickListener {
+        binding.ivKgcPlayer.setOnClickListener {
             val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-            fragmentTransaction.add(R.id.fcv_main, DataPlayerFragment::class.java.newInstance()).addToBackStack(null).commit()
+            fragmentTransaction.add(R.id.fcv_main, KgcPlayerFragment::class.java.newInstance()).addToBackStack(null).commit()
         }
 
-        binding.ivSeoulPlayer2.setOnClickListener {
+        binding.ivKgcPlayer2.setOnClickListener {
             val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-            fragmentTransaction.add(R.id.fcv_main, DataPlayerFragment::class.java.newInstance()).addToBackStack(null).commit()
+            fragmentTransaction.add(R.id.fcv_main, KgcPlayerFragment::class.java.newInstance()).addToBackStack(null).commit()
         }
     }
 

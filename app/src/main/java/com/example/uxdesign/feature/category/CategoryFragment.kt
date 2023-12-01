@@ -60,7 +60,8 @@ class CategoryFragment : Fragment() {
         _teamRecyclerView = binding.rvCategoryTeam
 
         addExampleData()
-        testAddingLeagueTeam()
+        addingKleagueTeam()
+        addingKBLTeam()
         setLayoutManager()
         sportsAdapter.notifyDataSetChanged()
 
@@ -69,6 +70,9 @@ class CategoryFragment : Fragment() {
     private val soccerLeagueList = ArrayList<String>()
     private val basketLeagueList = ArrayList<String>()
     private val europaTeamList = ArrayList<Int>()
+
+    private val kblTeamList = ArrayList<Int>()
+    private val kleagueTeamList = ArrayList<Int>()
 
     private fun setLayoutManager() {
         val layoutManager = LinearLayoutManager(this.context)
@@ -87,6 +91,7 @@ class CategoryFragment : Fragment() {
                         Log.d("uxdesign", "축구...")
                         Log.d("uxdesign", "${leagueList.size}")
                         setToSoccerLeague()
+
                     }
                     "농구" -> {
                         leagueList = basketLeagueList
@@ -94,6 +99,7 @@ class CategoryFragment : Fragment() {
                         Log.d("uxdesign", "$leagueList")
                         Log.d("uxdesign", "${leagueList.size}")
                         setToBasketLeague()
+
 
                     }
                 }
@@ -125,11 +131,19 @@ class CategoryFragment : Fragment() {
         teamAdapter = LeagueTeamAdapter(teamList, this.requireContext())
         teamRecyclerView.adapter = teamAdapter
 
+        setTeamAdapterListener()
+    }
+
+    private fun setTeamAdapterListener() {
         teamAdapter.itemClickListener = object : LeagueTeamAdapter.OnItemClickListener {
             override fun onItemClick(data: Int, position: Int) {
-                if (data.equals(R.drawable.ic_team_skknights)) {
+                if (data.equals(R.drawable.ic_fc_seoul)) {
                     val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                     fragmentTransaction.add(R.id.fcv_main, DataTeamFragment::class.java.newInstance()).addToBackStack(null).commit()
+                }
+                else if (data.equals(R.drawable.ic_team_redboosters)) {
+                    val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                    fragmentTransaction.add(R.id.fcv_main, KgcTeamFragment::class.java.newInstance()).addToBackStack(null).commit()
                 }
             }
         }
@@ -149,6 +163,39 @@ class CategoryFragment : Fragment() {
         teamList = europaTeamList
     }
 
+    private fun addingKBLTeam() {
+        kblTeamList.clear()
+        kblTeamList.add(R.drawable.ic_team_skknights)
+        kblTeamList.add(R.drawable.ic_team_redboosters)
+        kblTeamList.add(R.drawable.img_busan_kcc)
+        kblTeamList.add(R.drawable.img_changwon_lg)
+        kblTeamList.add(R.drawable.img_goyang_sono)
+        kblTeamList.add(R.drawable.img_daegu_pegasus)
+        kblTeamList.add(R.drawable.img_ulsan_basket)
+        kblTeamList.add(R.drawable.img_wonju_db)
+        kblTeamList.add(R.drawable.img_suwon_kt)
+        kblTeamList.add(R.drawable.img_seoul_samsung)
+    }
+
+    private fun addingKleagueTeam() {
+        kleagueTeamList.clear()
+        kleagueTeamList.add(R.drawable.img_daegu_fc)
+        kleagueTeamList.add(R.drawable.img_gangwon_fc)
+        kleagueTeamList.add(R.drawable.img_gwangju_fc)
+        kleagueTeamList.add(R.drawable.ic_fc_seoul)
+        kleagueTeamList.add(R.drawable.img_suwon_fc)
+        kleagueTeamList.add(R.drawable.img_jeju_united)
+        kleagueTeamList.add(R.drawable.img_incheon_united)
+        kleagueTeamList.add(R.drawable.img_jeonbuk_hundai)
+        kleagueTeamList.add(R.drawable.img_daejeonhana_citizen)
+        kleagueTeamList.add(R.drawable.img_suwon_bluewings)
+        kleagueTeamList.add(R.drawable.img_pohang_steelers)
+        kleagueTeamList.add(R.drawable.img_ulsan_hundai)
+
+        teamList = kleagueTeamList
+
+    }
+
 //    private fun test
 
     private fun setToSoccerLeague() {
@@ -161,6 +208,12 @@ class CategoryFragment : Fragment() {
         leagueAdapter = LeagueAdapter(soccerLeagueList, leagueSelectedList, this.requireContext())
         leagueRecyclerView.adapter = leagueAdapter
         leagueAdapter.notifyDataSetChanged()
+
+        teamAdapter = LeagueTeamAdapter(kleagueTeamList, this.requireContext())
+        teamRecyclerView.adapter = teamAdapter
+        teamAdapter.notifyDataSetChanged()
+
+        setTeamAdapterListener()
     }
 
     private fun setToBasketLeague() {
@@ -173,6 +226,12 @@ class CategoryFragment : Fragment() {
         leagueAdapter = LeagueAdapter(basketLeagueList, leagueSelectedList, this.requireContext())
         leagueRecyclerView.adapter = leagueAdapter
         leagueAdapter.notifyDataSetChanged()
+
+        teamAdapter = LeagueTeamAdapter(kblTeamList, this.requireContext())
+        teamRecyclerView.adapter = teamAdapter
+        teamAdapter.notifyDataSetChanged()
+
+        setTeamAdapterListener()
 
     }
 
