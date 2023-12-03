@@ -12,6 +12,7 @@ import com.example.uxdesign.R
 import com.example.uxdesign.WebViewFragment
 import com.example.uxdesign.data.News
 import com.example.uxdesign.databinding.FragmentHomeBinding
+import com.example.uxdesign.feature.board.BoardTitleFragment
 import com.example.uxdesign.feature.match.MatchDataActivity
 import com.example.uxdesign.feature.mypage.MypageActivity
 import com.example.uxdesign.feature.notice.NoticeFragment
@@ -47,6 +48,17 @@ class HomeFragment : Fragment() {
         list.add(News(getString(R.string.home_news_title_4), R.drawable.pic_home_news_4, "https://n.news.naver.com/sports/kbaseball/article/144/0000929146"))
         setLayoutManager()
         setHomeNewsListener()
+
+        binding.ivHomeMore.setOnClickListener {
+            val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            fragmentTransaction.add(R.id.fcv_main, BoardTitleFragment::class.java.newInstance()).addToBackStack(null).commit()
+        }
+
+        binding.tvHomeMore.setOnClickListener {
+            val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            fragmentTransaction.add(R.id.fcv_main, BoardTitleFragment::class.java.newInstance()).addToBackStack(null).commit()
+        }
+
     }
 
     private fun setHomeNewsListener() {

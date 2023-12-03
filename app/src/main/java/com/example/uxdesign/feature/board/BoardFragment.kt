@@ -54,7 +54,6 @@ class BoardFragment : Fragment() {
         boardList.add("배구 게시판")
         boardList.add("골프 게시판")
         boardList.add("기타 게시판")
-        boardList.add("View More")
 
         setLayoutManager()
 
