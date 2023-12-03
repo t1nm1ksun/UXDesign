@@ -1,20 +1,16 @@
 package com.example.uxdesign.feature.board
 
 import android.os.Bundle
-import android.text.TextUtils.replace
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.add
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
-import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uxdesign.R
 import com.example.uxdesign.databinding.FragmentBoardBinding
-import com.example.uxdesign.feature.home.HomeFragment
 
 class BoardFragment : Fragment() {
     private var _binding : FragmentBoardBinding? = null
@@ -58,6 +54,7 @@ class BoardFragment : Fragment() {
         boardList.add("배구 게시판")
         boardList.add("골프 게시판")
         boardList.add("기타 게시판")
+        boardList.add("View More")
 
         setLayoutManager()
 

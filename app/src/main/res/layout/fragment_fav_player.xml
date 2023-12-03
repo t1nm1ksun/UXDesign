@@ -12,17 +12,28 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="83dp"
-            android:layout_height="83dp"
+            android:layout_height="100dp"
             android:layout_marginTop="57dp"
             android:layout_marginLeft="36dp"
             app:cardCornerRadius="20dp"
             >
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="83dp"
             android:src="@drawable/pic_fav_player_1"
             android:scaleType="centerCrop"
             />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="손흥민"
+                android:fontFamily="@font/font_nanumsquare_bold"
+                android:layout_marginTop="83dp"
+                android:layout_marginStart="23dp"
+                />
+
         </androidx.cardview.widget.CardView>
 
 
@@ -31,62 +42,95 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_fav_player2"
             android:layout_width="83dp"
-            android:layout_height="83dp"
+            android:layout_height="100dp"
             android:layout_marginTop="184dp"
             android:layout_marginLeft="36dp"
             app:cardCornerRadius="20dp"
             >
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="83dp"
                 android:src="@drawable/pic_fav_player_2"
                 android:scaleType="centerCrop"
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="나상호"
+                android:fontFamily="@font/font_nanumsquare_bold"
+                android:layout_marginTop="83dp"
+                android:layout_marginStart="23dp"
+                />
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_fav_player1"
             android:layout_width="83dp"
-            android:layout_height="83dp"
+            android:layout_height="100dp"
             android:layout_marginTop="57dp"
             android:layout_marginLeft="146dp"
             app:cardCornerRadius="20dp"
             >
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="83dp"
                 android:src="@drawable/pic_fav_player_3"
-                android:scaleType="centerCrop"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고찬혁"
+                android:fontFamily="@font/font_nanumsquare_bold"
+                android:layout_marginTop="83dp"
+                android:layout_marginStart="23dp"
                 />
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="83dp"
-            android:layout_height="83dp"
+            android:layout_height="100dp"
             android:layout_marginTop="184dp"
             android:layout_marginLeft="146dp"
             app:cardCornerRadius="20dp"
             >
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="83dp"
                 android:src="@drawable/pic_fav_player_4"
-                android:scaleType="centerCrop"
+                android:scaleType="centerCrop"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이소영"
+                android:fontFamily="@font/font_nanumsquare_bold"
+                android:layout_marginTop="83dp"
+                android:layout_marginStart="23dp"
                 />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="83dp"
-            android:layout_height="83dp"
+            android:layout_height="100dp"
             android:layout_marginTop="57dp"
             android:layout_marginLeft="256dp"
             app:cardCornerRadius="20dp"
             >
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="83dp"
                 android:src="@drawable/pic_fav_player_5"
                 android:scaleType="centerCrop"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="김연경"
+                android:fontFamily="@font/font_nanumsquare_bold"
+                android:layout_marginTop="83dp"
+                android:layout_marginStart="23dp"
                 />
         </androidx.cardview.widget.CardView>
 

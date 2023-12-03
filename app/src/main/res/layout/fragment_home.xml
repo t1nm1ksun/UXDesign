@@ -276,7 +276,6 @@
         android:text="View More"
         android:fontFamily="@font/nanumsquare_extrabold"
         android:textSize="14sp"
-
         app:layout_constraintEnd_toStartOf="@id/iv_home_more"
         app:layout_constraintBottom_toBottomOf="@id/tv_home_board"
         app:layout_constraintTop_toTopOf="@id/tv_home_board"
